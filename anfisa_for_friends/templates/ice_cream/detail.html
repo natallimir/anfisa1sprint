@@ -1,14 +1,5 @@
 {% extends "base.html" %}
-{% block title %}
-  Анфиса для друзей. Подробное описание мороженого
-{% endblock %}
-{% block content %}
-  <h1>Подробное описание мороженого</h1>
-  <h3>{{ ice_cream.title }}</h3>
-  <p>{{ ice_cream.description }}</p>
-{% endblock %}
- 
-{% extends "base.html" %}
+{% load static %}
 
 {% block title %}
     Анфиса для друзей. {{ ice_cream.title|lower }}
@@ -22,11 +13,10 @@
       <p>{{ ice_cream.description }}</p>      
     </div> 
     <div class="col-12 col-md-6 mb-3">
-      <!-- Картинку берём из статики -->
       <img 
         class="img-fluid" 
         height="400" width="300"
-        src="img/image-holder.png"
+        src="{% static 'img/image-holder.png' %}"
         >      
     </div>
   </div> 
